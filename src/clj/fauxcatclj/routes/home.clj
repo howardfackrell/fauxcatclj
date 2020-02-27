@@ -8,9 +8,19 @@
   (layout/render
     "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
 
+(def catalog-items [
+                    {:foto "/img/captain.jpeg" :description "Captain America"}
+                    {:foto "/img/hawkeye.jpg" :description "Iron Man"}
+                    {:foto "/img/hulk.jpg" :description "Hulk"}
+                    {:foto "/img/ironman.jpeg" :description "Iron Man"}
+                    {:foto "/img/panther.jpeg" :description "Black Panther"}
+                    {:foto "/img/widow.jpg" :description "Black Widow"}
+                    {:foto "/img/vision.webp" :description "Vision"}
+                    ])
+
 (defn catalog-page []
   (layout/render
-    "catalog.html" {}))
+    "catalog.html" {:items catalog-items}))
 
 (defn about-page []
   (layout/render "about.html"))
